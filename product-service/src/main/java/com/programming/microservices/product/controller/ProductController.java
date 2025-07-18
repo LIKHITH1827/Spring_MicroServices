@@ -1,10 +1,9 @@
-package com.programming.microservices.controller;
+package com.programming.microservices.product.controller;
 
 
-import com.programming.microservices.dto.ProductRequestDTO;
-import com.programming.microservices.dto.ProductResponseDTO;
-import com.programming.microservices.model.Product;
-import com.programming.microservices.service.ProductService;
+import com.programming.microservices.product.dto.ProductRequestDTO;
+import com.programming.microservices.product.dto.ProductResponseDTO;
+import com.programming.microservices.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

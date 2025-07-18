@@ -1,4 +1,4 @@
-package com.programming.microservices.dto;
+package com.programming.microservices.product.dto;
 
 import java.math.BigDecimal;
 

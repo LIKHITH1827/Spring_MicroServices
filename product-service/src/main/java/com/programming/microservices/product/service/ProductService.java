@@ -1,13 +1,11 @@
-package com.programming.microservices.service;
+package com.programming.microservices.product.service;
 
 
-import com.programming.microservices.dto.ProductRequestDTO;
-import com.programming.microservices.dto.ProductResponseDTO;
-import com.programming.microservices.model.Product;
-import com.programming.microservices.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
+import com.programming.microservices.product.dto.ProductRequestDTO;
+import com.programming.microservices.product.dto.ProductResponseDTO;
+import com.programming.microservices.product.model.Product;
+import com.programming.microservices.product.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

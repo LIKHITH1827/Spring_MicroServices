@@ -1,4 +1,4 @@
-package com.programming.microservices.model;
+package com.programming.microservices.product.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.programming.microservices;
+package com.programming.microservices.product;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,19 +13,24 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Testcontainers //// 🔁 Tells JUnit this test uses Testcontainers
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //uns the entire Spring Boot app on a random port — mimics real behavior and avoids port clashes
 class ProductServiceApplicationTests {
 
      @LocalServerPort
      private Integer port;
+	 //Injects the port Spring Boot picked at runtime — needed to configure RestAssured.
 
 	// Automatically starts/stops container and binds to Spring MongoDB config
 	 @Container
+	 //This annotation tells Spring Boot to automatically wire the Testcontainers instance (MongoDB) as the application’s data source. It's Spring Boot 3.1+ feature — super clean!
 	 @ServiceConnection
 	static MongoDBContainer mongoDBContainer= new MongoDBContainer("mongo:7.0.5");
 
 	@BeforeEach
 	void setUp(){
+		//RestAssured is used to do Rest API calls
+		//Sets up RestAssured to target your Spring Boot app’s base URI and the actual runtime port.
+		//This ensures your .post(...) and .get(...) calls work properly.
 		RestAssured.baseURI = "http://localhost";
 		RestAssured.port = port;
 	}

@@ -1,4 +1,4 @@
-package com.programming.microservices;
+package com.programming.microservices.product;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

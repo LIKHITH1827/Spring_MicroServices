@@ -1,8 +1,7 @@
-package com.programming.microservices.repository;
+package com.programming.microservices.product.repository;
 
-import com.programming.microservices.model.Product;
+import com.programming.microservices.product.model.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
 
 
 public interface ProductRepository extends MongoRepository<Product, String> {
